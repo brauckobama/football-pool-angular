@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GamesService } from './games.service';
-import { IScores } from './iscores';
+import { RootObject, GameScore } from './inflscores';
 
 @Component({
   templateUrl: './games.component.html',
@@ -12,16 +12,20 @@ export class GamesComponent implements OnInit {
 
   week: string;
   year: string;
-  gamesJSON: IScores;
+  gamesJSON: GameScore[];
 
   onSelectChange(week: number) {
     this.games.getWeeklyGames(week).subscribe({
-      next: games => this.gamesJSON = games,
+      next: games => this.gamesJSON = games.gameScores,
     });
   }
 
   ngOnInit() {
     this.week = '7';
+
+    this.games.getWeeklyGames(parseInt(this.week)).subscribe({
+      next: games => this.gamesJSON = games.gameScores,
+    });
   }
 
 }
