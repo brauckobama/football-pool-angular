@@ -26,14 +26,6 @@
       </mat-select>
     </mat-form-field>
   </div>
-  <div class='col-md-6'>
-    <a class='col-md-6' href='#'>PHI</a>
-    <a class='col-md-6' href='#'>BUF</a>
-  </div>
-  <!-- <div *ngFor='let a of gamesJSON'>
-    {{homeTeamAbbr}}
-  </div> -->
-  <div class='col-md-6' *ngFor='let game of gamesJSON'>
-    <p> {{ game.gameSchedule.visitorTeam.nick }} @ {{ game.gameSchedule.homeTeam.nick }} </p>
-  </div>
-</div>
+  {{ indexOutput }}
+  <app-games-detail class='container' *ngFor='let game of gamesJSON; let i = index' [index]="i" [game]="game">
+  </app-games-detail>

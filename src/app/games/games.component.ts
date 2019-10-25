@@ -12,12 +12,17 @@ export class GamesComponent implements OnInit {
 
   week: string;
   year: string;
+  indexOutput: number;
   gamesJSON: GameScore[];
 
   onSelectChange(week: number) {
     this.games.getWeeklyGames(week).subscribe({
       next: games => this.gamesJSON = games.gameScores,
     });
+  }
+
+  recieveIndex($event) {
+    this.indexOutput = $event;
   }
 
   ngOnInit() {
