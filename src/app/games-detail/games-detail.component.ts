@@ -10,13 +10,13 @@ export class GamesDetailComponent implements OnInit {
 
   constructor() { }
 
-  @Input() index: number;
-  @Output() indexOut = new EventEmitter<number>();
+  // @Input() index: number;
+  // @Output() indexOut = new EventEmitter<number>();
   @Input() game: GameScore;
 
-  sendIndex() {
-    this.indexOut.emit(this.index);
-  }
+  // sendIndex() {
+  //   this.indexOut.emit(this.index);
+  // }
 
   ngOnInit() {
 

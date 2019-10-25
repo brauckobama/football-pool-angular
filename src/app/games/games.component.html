@@ -27,5 +27,6 @@
     </mat-form-field>
   </div>
   {{ indexOutput }}
-  <app-games-detail class='container' *ngFor='let game of gamesJSON; let i = index' [index]="i" [game]="game">
+  <app-games-detail class='container' *ngFor='let game of gamesJSON; let i = index' [game]="game">
+    <!-- <app-games-detail class='container' *ngFor='let game of gamesJSON; let i = index' [index]="i" [game]="game"> -->
   </app-games-detail>
