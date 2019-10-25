@@ -4,7 +4,8 @@
   </div>
   <div class="row">
     <mat-form-field>
-      <mat-select [(value)]='week'>
+      <mat-select [(value)]='week'
+      (selectionChange)='onSelectChange(week)'>
         <mat-option>None</mat-option>
         <mat-option value=1>1</mat-option>
         <mat-option value=2>2</mat-option>
@@ -30,4 +31,8 @@
     <a class='col-md-6' href='#'>PHI</a>
     <a class='col-md-6' href='#'>BUF</a>
   </div>
+  <!-- <div *ngFor='let a of gamesJSON'>
+    {{homeTeamAbbr}}
+  </div> -->
+  <p> {{ gamesJSON | json }} </p>
 </div>
