@@ -26,7 +26,7 @@ export class GamesComponent implements OnInit {
   // }
 
   ngOnInit() {
-    this.week = '7';
+    this.week = '8';
 
     this.games.getWeeklyGames(parseInt(this.week)).subscribe({
       next: games => this.gamesJSON = games.gameScores,

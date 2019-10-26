@@ -1,8 +1,12 @@
-<div class='col-md-6 text-center'>
-  {{ game.gameSchedule.visitorTeam.nick }}
-  <span *ngIf='game.score'> {{game.score.visitorTeamScore.pointTotal }} </span>
-  @
-  {{ game.gameSchedule.homeTeam.nick }}
-  <span *ngIf='game.score'> {{game.score.homeTeamScore.pointTotal }}</span>
-  <div class='mx-auto' *ngIf='!game.score'> {{game.gameSchedule.gameTimeEastern + ' EST'}}</div>
-</div>
+<mat-card class='d-flex justify-content-center'>
+  <mat-card-header>
+    {{ game.gameSchedule.visitorTeam.nick }}
+    <span *ngIf='game.score'> &nbsp; {{game.score.visitorTeamScore.pointTotal }} </span>
+    &nbsp;@&nbsp;
+    {{ game.gameSchedule.homeTeam.nick }}
+    <span *ngIf='game.score'> &nbsp; {{game.score.homeTeamScore.pointTotal }}</span>
+  </mat-card-header>
+  <mat-card-content>
+    <div *ngIf='!game.score'> &nbsp;{{game.gameSchedule.gameTimeEastern + ' EST'}}</div>
+  </mat-card-content>
+</mat-card>

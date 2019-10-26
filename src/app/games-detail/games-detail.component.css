@@ -1,5 +1,6 @@
-.container {
+.mat-card {
   outline: 1px blue solid;
+  /* width: 50%; */
 }
 .col-md-6 {
   outline: 1px red solid;
