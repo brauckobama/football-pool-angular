@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <a class="navbar-brand abs" href="#">Sinop Sudden Death Pool</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
     <span class="navbar-toggler-icon"></span>
@@ -21,17 +21,16 @@
       </li>
     </ul>
   </div>
-</nav>
-
-  <mat-sidenav-container>
-    <app-header></app-header>
-    <mat-sidenav #sidenav role="navigation">
-      <!--this is a place for us to add side-nav code-->
-    </mat-sidenav>
-    <mat-sidenav-content>
-      <!--in here all the content must reside. We will add a navigation header as well-->
-      <main>
-        <router-outlet></router-outlet>
-      </main>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+</nav> -->
+<mat-sidenav-container>
+  <!-- <app-header></app-header> -->
+  <mat-sidenav #sidenav role="navigation">
+    <app-sidenav-list></app-sidenav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
