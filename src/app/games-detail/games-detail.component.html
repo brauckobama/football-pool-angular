@@ -1,1 +1,8 @@
-<p>games-detail works!</p>
+<div class='col-md-6 text-center'>
+  {{ game.gameSchedule.visitorTeam.nick }}
+  <span *ngIf='game.score'> {{game.score.visitorTeamScore.pointTotal }} </span>
+  @
+  {{ game.gameSchedule.homeTeam.nick }}
+  <span *ngIf='game.score'> {{game.score.homeTeamScore.pointTotal }}</span>
+  <div class='mx-auto' *ngIf='!game.score'> {{game.gameSchedule.gameTimeEastern + ' EST'}}</div>
+</div>

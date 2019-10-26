@@ -1,0 +1,6 @@
+.container {
+  outline: 1px blue solid;
+}
+.col-md-6 {
+  outline: 1px red solid;
+}
