@@ -6,16 +6,18 @@ import { AppComponent } from './app.component';
 import { GamesComponent } from './games/games.component';
 import { PathNotFoundComponent } from './path-not-found/path-not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule, MatToolbarModule, MatSelectModule, MatSidenavModule } from '@angular/material/';
+import { MatSliderModule, MatButtonModule, MatIconModule, MatToolbarModule, MatSelectModule, MatSidenavModule } from '@angular/material/';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { GamesDetailComponent } from './games-detail/games-detail.component';
+import { HeaderComponent } from './navigation/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GamesComponent,
     PathNotFoundComponent,
-    GamesDetailComponent
+    GamesDetailComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,9 @@ import { GamesDetailComponent } from './games-detail/games-detail.component';
     MatSelectModule,
     HttpClientModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
