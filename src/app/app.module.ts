@@ -6,8 +6,7 @@ import { AppComponent } from './app.component';
 import { GamesComponent } from './games/games.component';
 import { PathNotFoundComponent } from './path-not-found/path-not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider';
-import { MatSelectModule } from '@angular/material/select';
+import { MatSliderModule, MatToolbarModule, MatSelectModule, MatSidenavModule } from '@angular/material/';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { GamesDetailComponent } from './games-detail/games-detail.component';
 
@@ -24,7 +23,9 @@ import { GamesDetailComponent } from './games-detail/games-detail.component';
     BrowserAnimationsModule,
     MatSliderModule,
     MatSelectModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
