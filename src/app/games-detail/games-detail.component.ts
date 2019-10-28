@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { GameScore } from '../games/inflscores';
+import { faFootballBall } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-games-detail',
@@ -14,6 +15,7 @@ export class GamesDetailComponent implements OnInit {
 
   imgURLHome: string;
   imgURLVisitor: string;
+  faFootballBall = faFootballBall;
 
   ngOnInit() {
     this.imgURLHome = 'assets/' + this.game.gameSchedule.homeNickname + '.png';

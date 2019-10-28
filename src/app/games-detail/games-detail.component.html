@@ -16,17 +16,38 @@
       <div class='period'> {{game.gameSchedule.gameTimeEastern + ' EST'}}</div>
     </div>
     <div class='row text-center' *ngIf='game.score'>
-      <div class='col-md-4 score'> {{game.score.visitorTeamScore.pointTotal }} </div>
+      <div class='col-md-4 score'> {{game.score.visitorTeamScore.pointTotal }}
+        <span class='col-xs'
+          *ngIf='game.gameSchedule.visitorTeamAbbr === game.score.possessionTeamAbbr && game.score.phase != "FINAL"'>
+          <fa-icon [icon]="faFootballBall" style="font-size: medium;"></fa-icon>
+        </span>
+      </div>
       <div class='col-md-4 period' *ngIf='game.score.phase != "FINAL"'> {{ game.score.phase  + ' ' + game.score.time }}
         <div class='row justify-content-center' *ngIf='game.score.redZone'>
-          <div class='col-xs-4'>
+          <div class='col-xs-4' style="color: red">
             {{ game.score.down + ' & ' + game.score.yardsToGo + ' at the ' + game.score.yardline }}
           </div>
         </div>
       </div>
       <div class='col-md-4 period' *ngIf='game.score.phase === "FINAL"'> {{ game.score.phase }}
-        </div>
-      <div class='col-md-4 score'> {{ game.score.homeTeamScore.pointTotal }}</div>
+      </div>
+      <div class='col-md-4 score'> <span class='col-xs'
+          *ngIf='game.gameSchedule.homeTeamAbbr === game.score.possessionTeamAbbr && game.score.phase != "FINAL"'>
+          <fa-icon [icon]="faFootballBall" style="font-size: medium;"></fa-icon>
+        </span> {{ game.score.homeTeamScore.pointTotal }}
+      </div>
     </div>
   </mat-card-content>
+  <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Open to see Scoring Summary
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <p>This is the primary content of the panel.</p>
+
+    </mat-expansion-panel>
 </mat-card>
+
+<!-- https://github.com/derek-adair/nflgame/blob/master/nflgame/game.py NFL endpoints -->
