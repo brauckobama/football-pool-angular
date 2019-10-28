@@ -21,10 +21,6 @@ export class GamesComponent implements OnInit {
     });
   }
 
-  // recieveIndex($event) {
-  //   this.indexOutput = $event;
-  // }
-
   ngOnInit() {
     this.week = '8';
 
