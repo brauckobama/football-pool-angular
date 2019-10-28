@@ -12,13 +12,21 @@
   </mat-card-header>
 
   <mat-card-content>
-    <div class='row justify-content-center' *ngIf='!game.score'>
+    <div class='row justify-content-center' *ngIf='!game.score || game.score === null'>
       <div class='period'> {{game.gameSchedule.gameTimeEastern + ' EST'}}</div>
     </div>
     <div class='row text-center' *ngIf='game.score'>
       <div class='col-md-4 score'> {{game.score.visitorTeamScore.pointTotal }} </div>
-      <div class='col-md-4 period'> {{game.score.phase }} </div>
-      <div class='col-md-4 score'> {{game.score.homeTeamScore.pointTotal }}</div>
+      <div class='col-md-4 period' *ngIf='game.score.phase != "FINAL"'> {{ game.score.phase  + ' ' + game.score.time }}
+        <div class='row justify-content-center' *ngIf='game.score.redZone'>
+          <div class='col-xs-4'>
+            {{ game.score.down + ' & ' + game.score.yardsToGo + ' at the ' + game.score.yardline }}
+          </div>
+        </div>
+      </div>
+      <div class='col-md-4 period' *ngIf='game.score.phase === "FINAL"'> {{ game.score.phase }}
+        </div>
+      <div class='col-md-4 score'> {{ game.score.homeTeamScore.pointTotal }}</div>
     </div>
   </mat-card-content>
 </mat-card>
