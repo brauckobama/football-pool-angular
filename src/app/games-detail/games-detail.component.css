@@ -20,7 +20,7 @@
 .teamAt {
   font-family: 'Staatliches', cursive;
   font-size: 1rem;
-  align-self: center;
+  text-align: center;
 }
 
 ::ng-deep .mat-card-header-text {

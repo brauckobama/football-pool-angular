@@ -26,7 +26,9 @@
       </mat-select>
     </mat-form-field>
   </div>
-  <div class='row'>
-    <app-games-detail class='card-detail col-md-6' *ngFor='let game of gamesJSON; let i = index' [game]="game">
-    </app-games-detail>
+  <div class='container'>
+    <div class='row align-items-end'>
+      <app-games-detail class='card-detail col-lg-6 col-sm-12' *ngFor='let game of gamesJSON; let i = index' [game]="game">
+      </app-games-detail>
+    </div>
   </div>
