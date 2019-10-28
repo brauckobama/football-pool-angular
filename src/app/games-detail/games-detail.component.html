@@ -1,37 +1,37 @@
-<mat-card class='container'>
-  <mat-card-header class='row justify-content-center align-items-center'>
-    <div class='col-lg-4'>
+<mat-card class='container-fluid'>
+  <mat-card-header class='d-flex justify-content-center align-items-center'>
+    <div class='mx-auto'>
       <img class='' style='max-width: 100px; max-height: 100px;' src="{{ imgURLVisitor }}" />
     </div>
-    <div class='col-lg-2 teamAt'>
+    <div class='mx-auto teamAt'>
       @
     </div>
-    <div class='col-lg-4'>
+    <div class='mx-auto'>
       <img class='' style='max-width: 100px; max-height: 100px;' src="{{ imgURLHome }}" />
     </div>
   </mat-card-header>
 
   <mat-card-content>
-    <div class='row justify-content-center' *ngIf='!game.score || game.score === null'>
-      <div class='period'> {{game.gameSchedule.gameTimeEastern + ' EST'}}</div>
+    <div class='d-flex justify-content-center' *ngIf='!game.score || game.score === null'>
+      <div class='mx-auto period'> {{game.gameSchedule.gameTimeEastern + ' EST'}}</div>
     </div>
-    <div class='row text-center' *ngIf='game.score'>
-      <div class='col-md-4 score'> {{game.score.visitorTeamScore.pointTotal }}
+    <div class='d-flex text-center' *ngIf='game.score'>
+      <div class='mx-auto score'> {{game.score.visitorTeamScore.pointTotal }}
         <span class='col-xs'
           *ngIf='game.gameSchedule.visitorTeamAbbr === game.score.possessionTeamAbbr && game.score.phase != "FINAL"'>
           <fa-icon [icon]="faFootballBall" style="font-size: medium;"></fa-icon>
         </span>
       </div>
-      <div class='col-md-4 period' *ngIf='game.score.phase != "FINAL"'> {{ game.score.phase  + ' ' + game.score.time }}
-        <div class='row justify-content-center' *ngIf='game.score.redZone'>
+      <div class='mx-auto period' *ngIf='game.score.phase != "FINAL"'> {{ game.score.phase  + ' ' + game.score.time }}
+        <div class='row-fluid justify-content-center' *ngIf='game.score.redZone'>
           <div class='col-xs-4' style="color: red">
             {{ game.score.down + ' & ' + game.score.yardsToGo + ' at the ' + game.score.yardline }}
           </div>
         </div>
       </div>
-      <div class='col-md-4 period' *ngIf='game.score.phase === "FINAL"'> {{ game.score.phase }}
+      <div class='mx-auto period' *ngIf='game.score.phase === "FINAL"'> {{ game.score.phase }}
       </div>
-      <div class='col-md-4 score'> <span class='col-xs'
+      <div class='mx-auto score'> <span class='col-xs'
           *ngIf='game.gameSchedule.homeTeamAbbr === game.score.possessionTeamAbbr && game.score.phase != "FINAL"'>
           <fa-icon [icon]="faFootballBall" style="font-size: medium;"></fa-icon>
         </span> {{ game.score.homeTeamScore.pointTotal }}
