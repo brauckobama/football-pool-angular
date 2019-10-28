@@ -19,10 +19,16 @@
 
 .teamAt {
   font-family: 'Staatliches', cursive;
-  text-align: center;
   font-size: 1rem;
+  align-self: center;
 }
 
-.teamImg {
-  text-align: center;
+.teamLogo {
+  /* align-self: center; */
+}
+
+::ng-deep .mat-card-header-text {
+  /* CSS styles go here */
+  margin: 0px;
+  display: none;
 }

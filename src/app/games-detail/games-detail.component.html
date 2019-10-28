@@ -1,19 +1,21 @@
-<mat-card class='container-fluid'>
-  <mat-card-header class='d-flex justify-content-center align-items-center'>
-    <div class='mx-auto teamImg'>
-      <img class='' style='max-width: 100px; max-height: 100px;' src="{{ imgURLVisitor }}" />
-    </div>
-    <div class='mx-auto teamAt'>
-      @
-    </div>
-    <div class='mx-auto teamImg'>
-      <img class='' style='max-width: 100px; max-height: 100px;' src="{{ imgURLHome }}" />
+<mat-card class='row'>
+  <mat-card-header class='col-md-12 justify-content-center align-items-center'>
+    <div class='row'>
+      <div class='col-lg-5'>
+        <img class='teamLogo' style='max-width: 100px; max-height: 100px;' src="{{ imgURLVisitor }}" />
+      </div>
+      <div class='col-lg-2 teamAt'>
+        @
+      </div>
+      <div class='col-lg-5'>
+        <img class='teamLogo' style='max-width: 100px; max-height: 100px;' src="{{ imgURLHome }}" />
+      </div>
     </div>
   </mat-card-header>
 
   <mat-card-content>
-    <div class='d-flex justify-content-center' *ngIf='!game.score || game.score === null'>
-      <div class='mx-auto period'> {{game.gameSchedule.gameTimeEastern + ' EST'}}</div>
+    <div class='col-md-12 justify-content-center' *ngIf='!game.score || game.score === null'>
+      <div class='period'> {{game.gameSchedule.gameTimeEastern + ' EST'}}</div>
     </div>
     <div class='d-flex text-center' *ngIf='game.score'>
       <div class='mx-auto score'> {{game.score.visitorTeamScore.pointTotal }}
@@ -39,15 +41,15 @@
     </div>
   </mat-card-content>
   <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Open to see Scoring Summary
-        </mat-panel-title>
-      </mat-expansion-panel-header>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Open to see Scoring Summary
+      </mat-panel-title>
+    </mat-expansion-panel-header>
 
-      <p>This is the primary content of the panel.</p>
+    <p>This is the primary content of the panel.</p>
 
-    </mat-expansion-panel>
+  </mat-expansion-panel>
 </mat-card>
 
 <!-- https://github.com/derek-adair/nflgame/blob/master/nflgame/game.py NFL endpoints -->
