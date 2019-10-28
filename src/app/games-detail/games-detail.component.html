@@ -1,12 +1,24 @@
-<mat-card class='d-flex justify-content-center'>
-  <mat-card-header>
-    {{ game.gameSchedule.visitorTeam.nick }}
-    <span *ngIf='game.score'> &nbsp; {{game.score.visitorTeamScore.pointTotal }} </span>
-    &nbsp;@&nbsp;
-    {{ game.gameSchedule.homeTeam.nick }}
-    <span *ngIf='game.score'> &nbsp; {{game.score.homeTeamScore.pointTotal }}</span>
+<mat-card class='container'>
+  <mat-card-header class='row justify-content-center align-items-center'>
+    <div class='col-lg-4'>
+      <img class='' style='max-width: 100px; max-height: 100px;' src="{{ imgURLVisitor }}" />
+    </div>
+    <div class='col-lg-2 teamAt'>
+      @
+    </div>
+    <div class='col-lg-4'>
+      <img class='' style='max-width: 100px; max-height: 100px;' src="{{ imgURLHome }}" />
+    </div>
   </mat-card-header>
+
   <mat-card-content>
-    <div *ngIf='!game.score'> &nbsp;{{game.gameSchedule.gameTimeEastern + ' EST'}}</div>
+    <div class='row justify-content-center' *ngIf='!game.score'>
+      <div class='period'> {{game.gameSchedule.gameTimeEastern + ' EST'}}</div>
+    </div>
+    <div class='row text-center' *ngIf='game.score'>
+      <div class='col-md-4 score'> {{game.score.visitorTeamScore.pointTotal }} </div>
+      <div class='col-md-4 period'> {{game.score.phase }} </div>
+      <div class='col-md-4 score'> {{game.score.homeTeamScore.pointTotal }}</div>
+    </div>
   </mat-card-content>
 </mat-card>

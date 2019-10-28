@@ -10,16 +10,14 @@ export class GamesDetailComponent implements OnInit {
 
   constructor() { }
 
-  // @Input() index: number;
-  // @Output() indexOut = new EventEmitter<number>();
   @Input() game: GameScore;
 
-  // sendIndex() {
-  //   this.indexOut.emit(this.index);
-  // }
+  imgURLHome: string;
+  imgURLVisitor: string;
 
   ngOnInit() {
-
+    this.imgURLHome = 'assets/' + this.game.gameSchedule.homeNickname + '.png';
+    this.imgURLVisitor = 'assets/' + this.game.gameSchedule.visitorNickname + '.png';
   }
 
 }
