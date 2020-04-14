@@ -1,6 +1,6 @@
 # FootballFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.14.
+This project is an Angular app that shows an NFL scoreboard using the NFL's endpoints. Weeks can be selected, and when games are active, you will be able to see who has possession, the time left in the games, etc. Once functionality is fully built out, this will become a functioning football pool where people can make picks each week
 
 ## Development server
 
